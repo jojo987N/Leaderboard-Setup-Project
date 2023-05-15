@@ -81,7 +81,7 @@ Run this command:
 
 ```sh
  cd my-folder
- git clone https://github.com/jojo987N/to-do-list.git
+ git clone git@github.com:jojo987N/Leaderboard-Setup-Project.git
 ```
 ### Install
 
