@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap');
+
+@mixin font-generic($font-style, $font-size, $font-weight, $word-spacing, $color, $font-family: "Roboto") {
+  font-style: $font-style;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  word-spacing: $word-spacing;
+  color: $color;
+  font-family: $font-family, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  header {
+    h1 {
+      margin: 0;
+      padding: 40px 20px 55px 40px;
+      // border: 1px solid black;
+      @include font-generic(normal, 55px, 400, 1px, hsl(0, 0%, 15%));
+    }
+  }
+
+  section {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+
+    .title {
+      @include font-generic(normal, 35px, 400, 1px, hsl(0, 0%, 15%));
+
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      padding: 10px 40px;
+
+      @include font-generic(normal, 15px, 400, 1px, hsl(0, 0%, 15%));
+
+      box-shadow: 2px 3px hsl(0, 0%, 75%);
+      border: none;
+    }
+
+    .content-1 {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+      }
+
+      .list {
+        padding: 0;
+        margin: 0;
+        border: 2px solid black;
+        list-style: none;
+
+        .bg-grey {
+          background: hsl(0, 0%, 85%);
+        }
+
+        li {
+          padding: 15px;
+
+          @include font-generic(normal, 17px, 300, 1px, hsl(0, 0%, 15%));
+        }
+      }
+    }
+
+    .content-2 {
+      // border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: flex-end;
+      width: 30%;
+
+      input {
+        width: 100%;
+        padding: 10px;
+
+        @include font-generic(normal, 20px, 300, 1px, hsl(0, 0%, 15%));
+      }
+
+      .space {
+        word-spacing: 5px;
+        letter-spacing: 3px;
+        text-align: center;
+        // border: 1px solid black;
+        width: 100%;
+      }
+    }
+  }
+}
