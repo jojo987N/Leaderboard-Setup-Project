@@ -1,0 +1,32 @@
+{
+  "name": "leaderboard-setup-project",
+  "version": "1.0.0",
+  "description": "Leaderboard list app . First working version, without styling, following a wireframe . Use ES6, Webpack, GitFlow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jojo987N/Leaderboard-Setup-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jojo987N/Leaderboard-Setup-Project/issues"
+  },
+  "homepage": "https://github.com/jojo987N/Leaderboard-Setup-Project#readme",
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.27.5",
+    "hint": "^7.1.8",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^5.82.1"
+  }
+}
