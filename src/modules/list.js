@@ -1,13 +1,7 @@
+import Score from './score.js';
+
 export default class List {
-  constructor() {
-    this.store = [];
-  }
-
-  add(score) {
-    this.store.push(score);
-  }
-
-  render() {
-    return `<ul class="list">${this.store.map((score, i) => score.render(i)).join('')}</ul>`;
+  static render(store) {
+    return store.length ? `${store.map((score, i) => (new Score(...Object.values(score))).render(i)).join('')}` : '<li>Empty List</li>';
   }
 }
