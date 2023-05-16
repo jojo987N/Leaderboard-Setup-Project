@@ -1,12 +1,12 @@
 export default class Score {
-  constructor(name, score) {
-    this.name = name;
-    this.score = score;
+  constructor(score, user) {
+    this.user = user || document.querySelector('.name').value;
+    this.score = score || document.querySelector('.score').value;
   }
 
   render(i) {
     return `
-        <li class="${i % 2 === 0 || 'bg-grey'}">${this.name}: ${this.score}</li>
+        <li class="${i % 2 === 0 || 'bg-grey'}">${this.user}: ${this.score}</li>
         `;
   }
 }
