@@ -15,6 +15,7 @@ export const URL_BASE = 'https://us-central1-js-capstone-backend.cloudfunctions.
   document.querySelector('.submit').onclick = (e) => {
     e.preventDefault();
     AddScore.add(new Score(), game);
+    [...document.forms].find(() => true).reset();
   };
   document.querySelector('.refresh').onclick = async () => {
     window.location.reload();
