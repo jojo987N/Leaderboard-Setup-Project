@@ -5,8 +5,13 @@ import RecentScores from './modules/recentScores.js';
 import Score from './modules/score.js';
 import Store from './modules/store.js';
 import './style.scss';
+import Animation from './modules/animation.js';
 
 export const URL_BASE = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+const animation = new Animation();
+const refresh = document.querySelector('.refresh');
+
+animation.render();
 
 (async () => {
   const game = localStorage.getItem('game') || (await (await Game.init('Pokemon')).json()).result.slice(14, 34);
@@ -17,8 +22,9 @@ export const URL_BASE = 'https://us-central1-js-capstone-backend.cloudfunctions.
     AddScore.add(new Score(), game);
     [...document.forms].find(() => true).reset();
   };
-  document.querySelector('.refresh').onclick = async () => {
-    window.location.reload();
+  refresh.onclick = async () => {
+    RecentScores.render((await (await Store.get(game)).json()).result, List);
+    animation.remove();
   };
-  RecentScores.render((await (await Store.get(game)).json()).result, List);
+  refresh.click();
 })();
